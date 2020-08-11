@@ -48,6 +48,11 @@ Things you may want to cover:
 | image     | string | null: false |
 | name      | string | null: false |
 | text      | text   | null: false |
+| category  | string | null: false |
+| status    | string | null: false |
+| charge    | string | null: false |
+| city      | string | null: false |
+| day       | string | null: false |
 | price     | integer | null: false |
 | user_id   | integer | foreign_key: true |
 
@@ -62,7 +67,7 @@ Things you may want to cover:
 
 - belongs_to :user
 - belongs_to :item
-- has_one :addresses
+- has_one :address
 
 ## addresses テーブル
 
@@ -72,7 +77,7 @@ Things you may want to cover:
 | city            | string | null: false |
 | address1        | string | null: false |
 | address2        | string | null: false |
-| phone-number    | integer | null: false |
+| phone-number    | string | null: false |
 | purchase_id     | string | foreign_key: true |
 
 - belongs_to :purchase
