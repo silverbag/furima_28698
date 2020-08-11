@@ -48,11 +48,11 @@ Things you may want to cover:
 | image     | string | null: false |
 | name      | string | null: false |
 | text      | text   | null: false |
-| category  | string | null: false |
-| status    | string | null: false |
-| charge    | string | null: false |
-| city      | string | null: false |
-| day       | string | null: false |
+| category  | integer | null: false |
+| status    | integer | null: false |
+| charge    | integer | null: false |
+| city      | integer | null: false |
+| day       | integer | null: false |
 | price     | integer | null: false |
 | user_id   | integer | foreign_key: true |
 
@@ -62,8 +62,8 @@ Things you may want to cover:
 ## purchases テーブル
 
 | Column       | Type   | Options     |
-| users_id     | string | foreign_key: true |
-| items_id     | string | foreign_key: true |
+| user_id     | string | foreign_key: true |
+| item_id     | string | foreign_key: true |
 
 - belongs_to :user
 - belongs_to :item
@@ -75,9 +75,9 @@ Things you may want to cover:
 | zip-code        | integer | null: false |
 | state           | string | null: false |
 | city            | string | null: false |
-| address1        | string | null: false |
-| address2        | string | null: false |
+| house_number    | string | null: false |
+| building        | string | null: false |
 | phone-number    | string | null: false |
-| purchase_id     | string | foreign_key: true |
+| purchase_id     | integer | foreign_key: true |
 
 - belongs_to :purchase
