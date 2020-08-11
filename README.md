@@ -28,22 +28,34 @@ Things you may want to cover:
 ## users テーブル
 
 | Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-| nickname | string | null: false |
-| email    | string | null: false |
-| password | string | null: false |
+| nickname   | string | null: false |
+| email      | string | null: false |
+| password   | string | null: false |
+| first-name | string | null: false |
+| last-name  | string | null: false |
+| f-furigana   | string | null: false |
+| l-furigana   | string | null: false |
+| birthday   | string | null: false |
 
 ### Association
 
 - has_many :items
 - has_many :purchases
+- has_one :addresses
 
 ## items テーブル
 
 | Column    | Type   | Options     |
-| image     | ------ | ----------- |
-| text      | string | null: false |
-| users_id  | string | null: false |
+| image     | string | null: false |
+| name      | string | null: false |
+| text      | text   | null: false |
+| category  | string | null: false |
+| status    | string | null: false |
+| charge    | string | null: false |
+| city      | string | null: false |
+| day       | string | null: false |
+| price     | string | null: false |
+| user_id   | string | foreign_key: true |
 
 - belongs_to :user
 - has_one :purchase
@@ -51,10 +63,17 @@ Things you may want to cover:
 ## purchases テーブル
 
 | Column       | Type   | Options     |
-| name         | ------ | ----------- |
-| city         | string | null: false |
-| users_id     | string | null: false |
-| items_id  | string | null: false |
+| users_id     | string | foreign_key: true |
+| items_id     | string | foreign_key: true |
 
 - belongs_to :user
 - belongs_to :item
+
+## addresses テーブル
+
+| Column       | Type   | Options     |
+| name         | string | null: false |
+| city         | string | null: false |
+| users_id     | string | foreign_key: true |
+
+- belongs_to :user
