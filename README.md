@@ -62,8 +62,8 @@ Things you may want to cover:
 ## purchases テーブル
 
 | Column       | Type   | Options     |
-| user_id     | string | foreign_key: true |
-| item_id     | string | foreign_key: true |
+| user_id     | integer | foreign_key: true |
+| item_id     | integer | foreign_key: true |
 
 - belongs_to :user
 - belongs_to :item
@@ -76,7 +76,7 @@ Things you may want to cover:
 | state           | string | null: false |
 | city            | string | null: false |
 | house_number    | string | null: false |
-| building        | string | null: false |
+| building        | string |             |
 | phone-number    | string | null: false |
 | purchase_id     | integer | foreign_key: true |
 
