@@ -72,7 +72,7 @@ Things you may want to cover:
 ## addresses テーブル
 
 | Column          | Type   | Options     |
-| zip-code        | integer | null: false |
+| zip-code        | string | null: false |
 | state           | string | null: false |
 | city            | string | null: false |
 | house_number    | string | null: false |
