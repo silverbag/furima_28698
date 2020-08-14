@@ -6,5 +6,14 @@ class User < ApplicationRecord
   has_many :items
   has_many :purchases
 
-  validates :nickname, :email, :password, :firstname, :lastname, :f_furigana, :l_furigana, :birthday, presence: true
+ with_options presence: true do
+  validates :nickname, uniqueness: { case_sensitive: true }
+  validates :email
+  validates :password, format: { with: /\A[a-zA-Z0-9]+\z/}
+  validates :firstname
+  validates :lastname
+  validates :f_furigana
+  validates :l_furigana
+  validates :birthday
+ end
 end
