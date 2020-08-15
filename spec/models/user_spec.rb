@@ -57,13 +57,13 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to include("Password can't be blank")
     end
     it 'ユーザー本名は全角（漢字・ひらがな・カタカナ）で入力させること' do
-      @user.firstname = 'a'
-      @user.lastname = 'a'
+      @user.firstname = '太郎'
+      @user.lastname = '太郎'
       expect(@user).to be_valid
     end
     it 'ユーザー本名のフリガナが、名字と名前でそれぞれ必須であること' do
-      @user.f_furigana = 'a'
-      @user.l_furigana = 'a'
+      @user.f_furigana = 'タロウ'
+      @user.l_furigana = 'タロウ'
       expect(@user).to be_valid
     end
     it 'ユーザー本名のフリガナは全角（カタカナ）で入力させること' do
