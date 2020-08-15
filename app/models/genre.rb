@@ -4,6 +4,6 @@ class Genre < ActiveHash::Base
     { id: 2, name: 'status' },
     { id: 3, name: 'charge' },
     { id: 4, name: 'city' },
-    { id: 5, name: 'day' },
+    { id: 5, name: 'day' }
   ]
  end
