@@ -1,24 +1,28 @@
 class ItemsController < ApplicationController
-  # before_action :move_to_index
 
-  # def index
-  # end
+  def index
+    @items = Item.all.order("created_at DESC")
+  end
 
-  # def new
-  #   @users = User.new
-  # end
+  def edit
+  end
 
-  # def create
-  #  @users = User.new(user_param)
-  #   if @users.save
-  #    redirect_to root_path
-  #   else
-  #    render.new
-  #   end
-  # end
+  def new
+    @item = Item.new
+  end
 
-  # def move_to_index
-  #   unless user_signed_in?
-  #    redirect_to action: :index
-  #   end
+  def create
+    @item =Item.create(items_params)
+    redirect_to root_path
+  end
+
+  def show
+     @item = Item.find(params[:id])
+  end
+
+  private
+
+  def items_params
+    params.require(:item).permit(:name, :image, :text, :price, :category_id, :status_id, :charge_id, :city_id, :day_id).merge(user_id: current_user.id)
+  end
 end
