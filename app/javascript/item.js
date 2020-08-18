@@ -1,5 +1,6 @@
-{/* <script langage="javascript"> */}
-window.addEventListener('load', function(){
+/* <script langage="javascript"> */
+// window.onload = function(){
+window.addEventListener('click', function(){
   const price = document.getElementById("item-price");
 
   price.addEventListener('input', function(e) {
