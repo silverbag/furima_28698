@@ -186,7 +186,9 @@
 </div>
 <div class='purchase-btn'>
   <span>
-  <%= link_to '出品する',new_item_path, class: 'purchase-btn-text' %>
+  <%# <% if current_user %>
+   <%= link_to '出品する',new_item_path, class: 'purchase-btn-text' %>
+   <%# <% end %>
   </span>
   <%# <a href="#"> %>
     <%= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>

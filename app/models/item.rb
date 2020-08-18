@@ -5,15 +5,16 @@ class Item < ApplicationRecord
 
   with_options presence: true do
 
-    # varidates :name
-    # varidates :price
-    # varidates :user_id
-    # varidates :category_id
-    # varidates :status_id
-    # varidates :charge_id
-    # varidates :city_id
-    # varidates :day_id
-
+    validates :name
+    validates :text
+    validates :price
+    validates :user_id
+    validates :category_id
+    validates :status_id
+    validates :charge_id
+    validates :city_id
+    validates :day_id
+    
   end
   
   extend ActiveHash::Associations::ActiveRecordExtensions
