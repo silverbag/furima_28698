@@ -4,10 +4,8 @@ RSpec.describe Item, type: :model do
   describe 'ユーザー認証' do
     before do
       @item = FactoryBot.build(:item)
-      @user = FactoryBot.build(:user)
     end
   
-
   #  it 'ログインしているユーザーだけが、出品ページへ遷移できること' do
   #   @user = nil
   #   @user.valid?
@@ -64,8 +62,10 @@ RSpec.describe Item, type: :model do
     expect(@item.errors.full_messages).to include("Price can't be blank")
    end
    it '価格の範囲が、¥300~¥9,999,999の間であること' do
-
-
+    @item.price = 299
+    @item.price = 10000000
+    @item.valid?
+    expect(@item.errors.full_messages).to include("Text can't be blank", "Price must be less than or equal to 9999999", "User can't be blank")
    end
   end
 end

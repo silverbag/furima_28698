@@ -7,7 +7,7 @@ class Item < ApplicationRecord
 
     validates :name
     validates :text
-    validates :price
+    validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
     validates :user_id
     validates :category_id
     validates :status_id
@@ -25,3 +25,4 @@ class Item < ApplicationRecord
   belongs_to_active_hash :day
 
 end
+
