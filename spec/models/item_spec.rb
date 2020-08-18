@@ -6,16 +6,6 @@ RSpec.describe Item, type: :model do
       @item = FactoryBot.build(:item)
     end
   
-  #  it 'ログインしているユーザーだけが、出品ページへ遷移できること' do
-  #   @user = nil
-  #   @user.valid?
-  #   expect(@user.errors.full_messages).to include("User must exist")
-  #   @user.save
-  #   @user.valid?
-  #   fill_in 
-  #   find('input[name="commit"]').click
-  #   get new_item_path
-  #  end
    it '画像は1枚必須であること(ActiveStorageを使用すること)' do
     @item.image = nil
     @item.valid?
