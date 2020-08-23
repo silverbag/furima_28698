@@ -15,7 +15,7 @@ class User < ApplicationRecord
     validates :firstname 
     validates :lastname
   end
-   with_options format: { with: /\A[ァ-ヶー－]+\z/} do
+  with_options format: { with: /\A[ァ-ヶー－]+\z/} do
     validates :f_furigana
     validates :l_furigana
   end
