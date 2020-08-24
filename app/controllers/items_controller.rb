@@ -5,9 +5,6 @@ class ItemsController < ApplicationController
     @items = Item.all.order('created_at DESC')
   end
 
-  def edit
-  end
-
   def update
     item = Item.find(params[:id])
     item.update(items_params)
@@ -27,14 +24,17 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      rendee :new
+      render :new
     end
   end
 
-  def show
-  end
-
   def destroy
+    item = Item.find(params[:id])
+    if item.destroy
+    redirect_to root_path
+    else
+    render :show
+    end
   end
 
   private
