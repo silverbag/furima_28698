@@ -59,7 +59,7 @@ Things you may want to cover:
 - belongs_to :user
 - has_one :purchase
 
-## purchases テーブル
+## orders テーブル
 
 | Column       | Type   | Options     |
 | user_id     | integer | foreign_key: true |
