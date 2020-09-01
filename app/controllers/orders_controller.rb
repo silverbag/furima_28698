@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   def index
     @item = Item.find(params[:item_id])
+    @order = UserOrder.new(order_params)
   end
 
   def create
@@ -10,6 +11,7 @@ class OrdersController < ApplicationController
       @order.save
       return redirect_to root_path
     else
+      @item = Item.find(params[:item_id])
       render :index
     end
   end
