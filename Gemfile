@@ -76,3 +76,5 @@ gem 'image_processing', '~> 1.2'
 gem 'capybara', '>= 2.15'
 
 gem 'payjp'
+
+gem "aws-sdk-s3", require: false
