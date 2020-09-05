@@ -10,20 +10,22 @@ ja:
         l_furigana: 名字フリガナ
         birthday: 生年月日
       item:
-        image: 画像
+        image: 出品画像
         name: 商品名
-        text: テキスト
+        text: 商品の説明
         price: 価格
         user_id: ユーザー情報
         category_id: カテゴリー
         status_id: 商品の状態
         charge_id: 配送料の負担
-        city_id: 都道府県
+        city_id: 発送元の地域
         day_id: 発送までの日数
+  activemodel:
+    attributes:
       user_order:
         zip_code: 郵便番号
         city_id: 都道府県
-        city: 市町村
+        city: 市区町村
         house_number: 番地
         phone_number: 電話番号
         token: クレジットカード情報
