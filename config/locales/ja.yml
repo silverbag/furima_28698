@@ -1,0 +1,29 @@
+ja:
+ activerecord:
+   attributes:
+     user:
+       nickname: ニックネーム
+       birthday: 生年月日
+       firstname: 名前
+       lastname: 名字
+       f_furigana: 名前フリガナ
+       l_furigana: 名字フリガナ
+     item:
+       text: テキスト
+       image: 画像
+       name: 名前
+       price: 値段
+       category: カテゴリー
+       status: 商品の状態
+       charge: 配送料の負担
+       city: 都道府県
+       day: 発送までの日数
+       birthday: 生年月日
+       password: パスワード
+       email: メールアドレス
+       token: クレジットカード情報
+       zip code: 郵便番号
+       house number: 番地
+       phone number: 電話番号
+       
+
