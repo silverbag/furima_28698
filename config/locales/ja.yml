@@ -11,13 +11,15 @@ ja:
      item:
        text: テキスト
        image: 画像
-       name: 名前
-       price: 値段
-       category: カテゴリー
-       status: 商品の状態
-       charge: 配送料の負担
-       city: 都道府県
-       day: 発送までの日数
+       name: 商品名
+       price: 価格
+       category_id: カテゴリー
+       status_id: 商品の状態
+       charge_id: 配送料の負担
+       city_id: 都道府県
+       day_id: 発送までの日数
+
+       
        birthday: 生年月日
        password: パスワード
        email: メールアドレス
