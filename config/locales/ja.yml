@@ -21,7 +21,7 @@ ja:
        city_id: 都道府県
        day_id: 発送までの日数
 
-      address:
+      user_order:
        zip_code: 郵便番号
        city_id: 都道府県
        city: 市町村
