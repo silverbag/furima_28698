@@ -3,29 +3,31 @@ ja:
    attributes:
      user:
        nickname: ニックネーム
-       birthday: 生年月日
+       email: メールアドレス
        firstname: 名前
        lastname: 名字
        f_furigana: 名前フリガナ
        l_furigana: 名字フリガナ
+       birthday: 生年月日
      item:
-       text: テキスト
        image: 画像
        name: 商品名
+       text: テキスト
        price: 価格
+       user_id: ユーザー情報
        category_id: カテゴリー
        status_id: 商品の状態
        charge_id: 配送料の負担
        city_id: 都道府県
        day_id: 発送までの日数
 
-       
+      address:
+       zip_code: 郵便番号
+       city_id: 都道府県
+       city: 市町村
+       house_number: 番地
+       phone_number: 電話番号
        birthday: 生年月日
-       password: パスワード
-       email: メールアドレス
        token: クレジットカード情報
-       zip code: 郵便番号
-       house number: 番地
-       phone number: 電話番号
        
 
