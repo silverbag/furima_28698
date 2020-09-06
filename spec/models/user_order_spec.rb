@@ -39,7 +39,7 @@ RSpec.describe UserOrder, type: :model do
     it '電話番号にはハイフンは不要で、11桁以内であること' do
       @user_order.phone_number = "090888899999"
       @user_order.valid?
-      expect(@user_order.errors.full_messages).to include("電話番号を入力してください")
+      expect(@user_order.errors.full_messages).to include("電話番号はハイフン抜きで入力してください")
     end    
   end
 end

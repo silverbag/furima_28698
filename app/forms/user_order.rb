@@ -5,15 +5,14 @@ class UserOrder
   attr_accessor :zip_code, :city_id, :city, :house_number, :building, :phone_number, :item_id, :token, :user_id, :authenticity_token
 
   with_options presence: true do
-    validates :zip_code, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "郵便番号を入力してください"}
-    # validates :state
+    validates :authenticity_token
+    validates :token, presence: { message: "を入力してください" }
+    validates :zip_code, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "を入力してください"}
     validates :city_id, presence: { message: "を入力してください" }
     validates :city, presence: { message: "を入力してください" }
     validates :house_number, presence: { message: "を入力してください" }
     # validates :building
-    validates :phone_number, format: {with: /\A\d{11}\z/, message: "を入力してください" }
-    validates :token, presence: { message: "を入力してください" }
-    validates :authenticity_token
+    validates :phone_number, format: {with: /\A\d{11}\z/, message: "はハイフン抜きで入力してください" }
   end
 
   with_options presence: true do
