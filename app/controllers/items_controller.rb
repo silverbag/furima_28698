@@ -20,7 +20,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.create(items_params)
+    @item = Item.new(items_params)
     if @item.save
       redirect_to root_path
     else
@@ -35,6 +35,11 @@ class ItemsController < ApplicationController
     else
       render :show
     end
+  end
+
+  def show
+    @message = Message.new
+    @messages = @item.messages.includes(:user)
   end
 
   private

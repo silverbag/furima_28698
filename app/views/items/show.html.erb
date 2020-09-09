@@ -39,7 +39,6 @@
           <% end %> 
           <%# //ログインしていて、なおかつ、ログインしているユーザと出品しているユーザが同一人物でないとき表示しましょう。 %>
           
-        <%# <% if user_signed_in? && current_user.id == @item.user.id %>
           <div class="item-explain-box">
             <span><%= "商品説明" %></span>
           </div>
@@ -82,23 +81,34 @@
             </div>
           </div>
         </div>
-        <%# <% end %> 
         <%# /商品の概要 %>
 
   <div class="comment-box">
-    <form>
-      <textarea class="comment-text"></textarea>
-      <p class="comment-warn">
-        相手のことを考え丁寧なコメントを心がけましょう。
-        <br>
-        不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      </p>
-      <button type="submit" class="comment-btn">
-        <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-        <span>コメントする<span>
-      </button>
-    </form>
+      <%= form_with url: item_messages_path(@item.id), local: true do |f| %>
+        <%= f.text_area :text, class:"comment-text", placeholder:"コメントを入力してください" %>
+        <p class="comment-warn">
+          相手のことを考え丁寧なコメントを心がけましょう。
+          <br>
+          不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        </p>
+
+        <button type="submit" class="comment-btn">
+          <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
+          <span>コメントする<span>
+        </button>
+      <% end %>
+      <h4>＜コメント＞</h4>
+      <div id='messages'>
+        <% if @messages %>
+          <% @messages.reverse_each do |message| %>
+            <p>
+              <strong><%= message.user.nickname %>：<%= message.text %></strong>
+            </p>
+          <% end %>
+        <% end %>
+      </div>
   </div>
+
   <div class="links">
     <a href="#" class="change-item-btn">
       ＜ 前の商品
