@@ -57,7 +57,9 @@ Things you may want to cover:
 | user_id   | integer | foreign_key: true |
 
 - belongs_to :user
-- has_one :purchase
+- has_one :order
+- has_many :message, through: :item_message
+- has_many :item_message
 
 ## orders テーブル
 
@@ -78,6 +80,25 @@ Things you may want to cover:
 | house_number    | string | null: false |
 | building        | string |             |
 | phone-number    | string | null: false |
-| purchase_id     | integer | foreign_key: true |
+| order_id     | integer | foreign_key: true |
 
 - belongs_to :purchase
+
+## messages  テーブル
+
+| Column          | Type   | Options     |
+| text            | string | null: false |
+| item_id         | references | foreign_key: true |
+| user_id         | references | foreign_key: true |
+
+has_many :item_message
+has_many :item, through: :item_message
+
+<!-- ## item_message 中間 テーブル
+
+| Column          | Type   | Options     |
+| item_id     | references | foreign_key: true |
+| user_id     | references | foreign_key: true |
+
+- belongs_to :item
+- belongs_to :message -->
