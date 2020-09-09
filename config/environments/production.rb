@@ -39,8 +39,9 @@ Rails.application.configure do
   config.active_storage.service = :amazon
 
   # Mount Action Cable outside main process or domain.
-  config.action_cable.mount_path = nil
-  config.action_cable.url = 'wss://54.95.37.107/cable'
+  # config.action_cable.mount_path = nil
+  ActionCable.server.config.disable_request_forgery_protection = true
+  config.action_cable.url = 'ws://54.95.37.107/cable'
   config.action_cable.allowed_request_origins = [ 'http://54.95.37.107' ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
