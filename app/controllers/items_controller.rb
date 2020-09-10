@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :search]
   before_action :set_item, only: [:edit, :show, :update]
   def index
     @items = Item.all.order('created_at DESC')
@@ -40,6 +40,10 @@ class ItemsController < ApplicationController
   def show
     @message = Message.new
     @messages = @item.messages.includes(:user)
+  end
+
+  def search
+    @items = SearchItemsService.search(params[:keyword])
   end
 
   private
