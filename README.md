@@ -58,8 +58,8 @@ Things you may want to cover:
 
 - belongs_to :user
 - has_one :order
-- has_many :message, through: :item_message
-- has_many :item_message
+- has_many :tags, through: :item_tag_relations
+- has_many :item_tag_relations
 
 ## orders テーブル
 
@@ -94,11 +94,19 @@ Things you may want to cover:
 has_many :item_message
 has_many :item, through: :item_message
 
-<!-- ## item_message 中間 テーブル
+ ## item_tag_relation 中間 テーブル
 
 | Column          | Type   | Options     |
-| item_id     | references | foreign_key: true |
-| user_id     | references | foreign_key: true |
+| tag         | references | foreign_key: true |
+| item        | references | foreign_key: true |
 
 - belongs_to :item
-- belongs_to :message -->
+- belongs_to :tag
+
+ ## tag テーブル
+
+| Column          | Type   | Options     |
+| name            | string | foreign_key: true |
+
+- has_many :items, through: :item_tag_relations
+- has_many :item_tag_relations
