@@ -16,11 +16,11 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item = Item.new
+    @item = ItemTag.new
   end
 
   def create
-    @item = Item.new(items_params)
+    @item = ItemTag.new(tags_params)
     if @item.save
       redirect_to root_path
     else
@@ -40,16 +40,24 @@ class ItemsController < ApplicationController
   def show
     @message = Message.new
     @messages = @item.messages.includes(:user)
+    @tag = Tag.find(params[:id])
   end
 
   def search
     @items = SearchItemsService.search(params[:keyword])
+    # return nil if params[:input] == ""
+    # tag = Tag.where(['name LIKE ?', "%#{params[:input]}%"] )
+    # render json:{ keyword: tag }
   end
 
   private
 
   def items_params
     params.require(:item).permit(:name, :image, :text, :price, :category_id, :status_id, :charge_id, :city_id, :day_id).merge(user_id: current_user.id)
+  end
+
+  def tags_params
+    params.permit(:name, :image, :text, :price, :category_id, :status_id, :charge_id, :city_id, :day_id, :tag).merge(user_id: current_user.id)
   end
 
   def set_item
